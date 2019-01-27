@@ -10,7 +10,445 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+<!-- Page wrapper -->
+<div class="page-wrapper">
+  <!-- Header -->
+  <header class="page-header">
+    <div class="container">
+      <!-- Main navigation -->
+      <nav class="main-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <a class="logo__link" href="index.html">
+            <img class="logo__img" src="./img/logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс">
+          </a>
+        </div>
+        <!-- End Logo -->
+        <!-- Navigatiion list -->
+        <ul class="main-nav__list">
+          <li class="main-nav__item">
+            <a class="main-nav__link link" href="#">Студия</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link link" href="#">Клиенты</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link main-nav__link--current link" href="#">Магазин</a>
+          </li>
+          <li class="main-nav__item">
+            <a class="main-nav__link link" href="#">Контакты</a>
+          </li>
+        </ul>
+        <!-- End Navigatiion list -->
+        <!-- Cart -->
+        <div class="cart">
+          <a class="cart__link main-nav__link link" href="#">
+            <svg class="cart__icon icon" width="15" height="15">
+              <use xlink:href="#icon-cart"/>
+            </svg>
+            <span class="cart__text">Корзина</span>
+          </a>
+        </div>
+        <!-- End Cart -->
+      </nav>
+      <!-- End Main navigation -->
+    </div>
+  </header>
+  <!-- End Header -->
 
+  <!-- Page content -->
+  <main class="page-content">
+    <div class="container">
+      <h1 class="page-content__title">Магазин готовых шаблонов <span class="visually-hidden">Нёрдс</span></h1>
+    </div>
+
+    <!-- Catalog -->
+    <div class="catalog container">
+      <!-- Filters -->
+      <section class="filters">
+        <h2 class="visually-hidden">Фильтр шаблонов</h2>
+
+        <form class="filters__form" id="form-filters" action="#" method="GET">
+          <fieldset class="filters__item price-filter">
+            <legend class="filters__caption">Стоимость:</legend>
+            <div class="filters__field">
+              <div class="price-filter__range-controls">
+                <div class="price-filter__range-scale">
+                  <div class="price-filter__range-bar"></div>
+                  <button class="price-filter__toggle price-filter__toggle--min" type="button"><span class="visually-hidden">Меньше</span></button>
+                  <button class="price-filter__toggle price-filter__toggle--max" type="button"><span class="visually-hidden">Больше</span></button>
+                </div>
+              </div>
+              <div class="price-filter__range-inputs">
+                <label class="price-filter__label" for="price-min">
+                  <span class="price-filter__text">От</span>
+                  <input class="price-filter__input" id="price-min" type="number" name="price-min" value="0">
+                </label>
+                <label class="price-filter__label" for="price-max">
+                  <span class="price-filter__text">До</span>
+                  <input class="price-filter__input" id="price-max" type="number" name="price-max" value="15000">
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__item grid-filter">
+            <legend class="filters__caption">Сетка:</legend>
+            <div class="filters__field">
+              <ul class="grid-filter__list">
+                <li class="grid-filter__item">
+                  <input class="grid-filter__input" id="grid-adaptive" type="radio" name="grid" value="adaptive">
+                  <label class="grid-filter__label" for="grid-adaptive">
+                    <span class="grid-filter__indicator">Адаптивная</span>
+                  </label>
+                </li>
+                <li class="grid-filter__item">
+                  <input class="grid-filter__input" id="grid-fixed" type="radio" name="grid" value="fixed">
+                  <label class="grid-filter__label" for="grid-fixed">
+                    <span class="grid-filter__indicator">Фиксированная</span>
+                  </label>
+                </li>
+                <li class="grid-filter__item">
+                  <input class="grid-filter__input" id="grid-stretch" type="radio" name="grid" value="stretch">
+                  <label class="grid-filter__label" for="grid-stretch">
+                    <span class="grid-filter__indicator">Резиновая</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+
+          <fieldset class="filters__item options-filter">
+            <legend class="filters__caption">Особенности:</legend>
+            <div class="filters__field">
+              <ul class="options-filter__list">
+                <li class="options-filter__item">
+                  <input class="options-filter__input" id="options-slider" type="checkbox" name="options" value="slider" checked>
+                  <label class="options-filter__label" for="options-slider">
+                    <span class="options-filter__indicator">Слайдер</span>
+                  </label>
+                </li>
+                <li class="options-filter__item">
+                  <input class="options-filter__input" id="options-advantages" type="checkbox" name="options" value="advantages">
+                  <label class="options-filter__label" for="options-advantages">
+                    <span class="options-filter__indicator">Блок преимуществ</span>
+                  </label>
+                </li>
+                <li class="options-filter__item">
+                  <input class="options-filter__input" id="options-news" type="checkbox" name="options" value="news" checked>
+                  <label class="options-filter__label" for="options-news">
+                    <span class="options-filter__indicator">Новости</span>
+                  </label>
+                </li>
+                <li class="options-filter__item">
+                  <input class="options-filter__input" id="options-gallery" type="checkbox" name="options" value="gallery">
+                  <label class="options-filter__label" for="options-gallery">
+                    <span class="options-filter__indicator">Галерея</span>
+                  </label>
+                </li>
+                <li class="options-filter__item">
+                  <input class="options-filter__input" id="options-cart" type="checkbox" name="options" value="cart">
+                  <label class="options-filter__label" for="options-cart">
+                    <span class="options-filter__indicator">Корзина</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+          
+          <div class="filters__btn-wrapper">
+            <button class="filters__btn" type="submit">Показать</button>
+          </div>
+
+        </form>
+        
+      </section>
+      <!-- End Filters -->
+      <!-- Products -->
+      <section class="products">
+        <h2 class="visually-hidden">Каталог шаблонов</h2>
+
+        <!-- Sorting -->
+        <div class="sorting">
+          <b class="sorting__caption">Сортировать:</b>
+          <ul class="sorting__type type-sorting__list">
+            <li class="type-sorting__item type-sorting__item--current">
+              <a class="type-sorting__link" href="#">По цене</a>
+            </li>
+            <li class="type-sorting__item">
+              <a class="type-sorting__link" href="#">По типу</a>
+            </li>
+            <li class="type-sorting__item">
+              <a class="type-sorting__link" href="#">По названию</a>
+            </li>
+          </ul>
+
+          <ul class="sorting__order order-sorting__list">
+            <li class="order-sorting__item order-sorting__item--current">
+              <a class="order-sorting__link" href="#">
+                <span class="visually-hidden">По убыванию</span>
+              </a>
+            </li>
+            <li class="order-sorting__item">
+              <a class="order-sorting__link" href="#">
+                <span class="visually-hidden">По возрастанию</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Sorting -->
+        <!-- Products list -->
+        <ul class="products__list">
+          <li class="products__item product">
+            <div class="product__img-wrapper">
+              <img class="product__img" src="./img/template-sedona.jpg" width="360" height="576" alt="Скриншот шаблона Sedona">
+            </div>
+            <div class="product__desc">
+              <h3 class="product__title">
+                <a class="product__link link" href="#">Sedona</a>
+              </h3>
+              <p class="product__text">Информационный сайт для туристов</p>
+              <div class="product__btn-wrapper">
+                <a class="btn product__btn" href="#">9 900 руб.</a>
+              </div>
+            </div>
+          </li>
+          
+          <li class="products__item product">
+            <div class="product__img-wrapper">
+              <img class="product__img" src="./img/template-pink.jpg" width="360" height="576" alt="Скриншот шаблона Pink">
+            </div>
+            <div class="product__desc">
+              <h3 class="product__title">
+                <a class="product__link link" href="#">Pink App</a>
+              </h3>
+              <p class="product__text">Продуктовый лендинг приложения для iOS и Android</p>
+              <div class="product__btn-wrapper">
+                <a class="btn product__btn" href="#">9 900 руб.</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="products__item product">
+            <div class="product__img-wrapper">
+              <img class="product__img" src="./img/template-barbershop.jpg" width="360" height="576" alt="Скриншот шаблона Barbershop">
+            </div>
+            <div class="product__desc">
+              <h3 class="product__title">
+                <a class="product__link link" href="#">Barbershop</a>
+              </h3>
+              <p class="product__text">Сайт салоны красоты.Для мужчин, да.</p>
+              <div class="product__btn-wrapper">
+                <a class="btn product__btn" href="#">9 900 руб.</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="products__item product">
+            <div class="product__img-wrapper">
+              <img class="product__img" src="./img/template-mishka.jpg" width="360" height="576" alt="Скриншот шаблона Mishka">
+            </div>
+            <div class="product__desc">
+              <h3 class="product__title">
+                <a class="product__link link" href="#">Mishka</a>
+              </h3>
+              <p class="product__text">Интернет-магазин вязаных игрушек</p>
+              <div class="product__btn-wrapper">
+                <a class="btn product__btn" href="#">9 900 руб.</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="products__item product">
+            <div class="product__img-wrapper">
+              <img class="product__img" src="./img/template-aplus.jpg" width="360" height="576" alt="Скриншот шаблона A Plus">
+            </div>
+            <div class="product__desc">
+              <h3 class="product__title">
+                <a class="product__link link" href="#">A Plus</a>
+              </h3>
+              <p class="product__text">Лендинг курсов повышения квалификации</p>
+              <div class="product__btn-wrapper">
+                <a class="btn product__btn" href="#">9 900 руб.</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="products__item product">
+            <div class="product__img-wrapper">
+              <img class="product__img" src="./img/template-kvast.jpg" width="360" height="576" alt="Скриншот шаблона Кваст">
+            </div>
+            <div class="product__desc">
+              <h3 class="product__title">
+                <a class="product__link link" href="#">Кваст</a>
+              </h3>
+              <p class="product__text">Промо-сайт производителя крафтового кваса</p>
+              <div class="product__btn-wrapper">
+                <a class="btn product__btn" href="#">9 900 руб.</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <!-- End Products list -->
+        <!-- Pagination -->
+        <div class="pagination">
+          <ul class="pagination__list" aria-label="Page navigation">
+            <li class="pagination__item pagination__item--current">
+              <a class="pagination__link">1</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">2</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__link" href="#">3</a>
+            </li>
+            <li class="pagination__item">
+              <a class="pagination__dir pagination__dir--next" href="#">Следующая</a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Pagination -->
+
+      </section>
+      <!-- End Products -->
+    </div>
+    <!-- End Catalog -->
+
+    <!-- Contacts -->
+    <section class="contacts">
+      <h2 class="visually-hidden">Контакты</h2>
+      <div class="container">
+        <div class="contacts__data">
+          <b class="contacts__company-name">Nёrds design studio</b>
+          <p class="contacts__address">
+            191186, Санкт-Петербург,<br>
+            ул. Б. Конюшенная, д. 19/8<br>
+          </p>
+          <a class="contacts__phone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a><br>
+          <a class="btn btn-wide contacts__btn"  href="feedback.html">Напишите нам</a>
+        </div>
+      </div>
+      <div class="contacts__map">
+        <div class="contacts__img-map-wrapper">
+          <img class="contacts__img-map" src="./img/map.png" width="1440" height="416" alt="Адрес нашего офиса по улице Большая Конюшенная 19/8 в городе Санкт-Петербург">
+        </div>
+        <div class="contacts__online-map-wrapper">
+          <iframe class="contacts__online-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.0046391232827!2d27.452055316549444!3d53.878345480094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbda934dc537a5%3A0x44cd2c2130a805e9!2svulica+Janko%C5%ADskaha+34%2C+Minsk!5e0!3m2!1sen!2sby!4v1545729682928" width="1200" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- End Contacts -->
+  </main>
+  <!-- End Page content -->
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <!-- Socials -->
+      <div class="socials">
+        <ul class="socials__list">
+          <li class="socials__item">
+            <a class="socials__link socials__link--vk" href="#" target="_blank">
+              <svg class="socials__icon icon" width="26" height="15">
+                <use xlink:href="#icon-vkontakte"/>
+              </svg>
+              <span class="visually-hidden">Вконтакте</span>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link socials__link--fb" href="#" target="_blank">
+              <svg class="socials__icon icon" width="12" height="22">
+                <use xlink:href="#icon-facebook"/>
+              </svg>
+              <span class="visually-hidden">Фейсбук</span>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a class="socials__link socials__link--in" href="#" target="_blank">
+              <svg class="socials__icon icon" width="21" height="21">
+                <use xlink:href="#icon-instagram"/>
+              </svg>
+              <span class="visually-hidden">Инстаграм</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- End Socials -->
+      <div class="appeal">
+        <b class="appeal__lead">Давайте дружить, это выгодно!</b>
+        <p class="appeal__promo">Скидка 10% для друзей из социальных сетей.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+</div>
+<!-- End Page wrapper -->
+
+<!-- Modal Write us -->
+<div class="modal-overlay">
+  <div class="modal-write-us">
+    <button class="modal-write-us__close modal-close">Закрыть</button>
+    <b class="modal-write-us__caption">Напишите нам</b>
+    <form class="modal-write-us__form" id="form-write-us" action="#" method="post">
+      <div class="field">
+        <label class="field__label" for="user-name-write-us">Ваше имя:</label>
+        <input class="modal-write-us__input field__input" id="user-name-write-us" type="text" name="user-name-write-us" placeholder="Имя Фамилия">
+      </div>
+      <div class="field">
+        <label class="field__label" for="email-write-us">Ваш e-mail:</label>
+        <input class="modal-write-us__input field__input" id="email-write-us" type="email" name="email-write-us" placeholder="email@example.com">
+      </div>
+      <div class="field">
+        <label class="field__label" for="message-write-us">Текст письма:</label>
+        <textarea class="modal-write-us__text field__text" id="message-write-us" name="message-write-us" placeholder="В свободной форме"></textarea>
+      </div>
+      <div class="modal-write-us__btn-wrapper">
+        <button class="btn" type="submit">Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End Modal Write us -->
+
+<!-- SVG-sprite -->
+<svg style="display: none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="icon-cart" viewBox="0 0 15 15" preserveAspectRatio="xMidYMid">
+    <circle cx="4.5" cy="13.5" r="1.5"/>
+    <circle cx="12.5" cy="13.5" r="1.5"/>
+    <polygon points="15,2 4.07,2 3.648,0 0,0 0,2 2.031,2 4.016,11 15,11 15,9 9.441,9 15,6.951 	"/>
+  </symbol>
+
+  <symbol id="icon-browser" viewBox="0 0 360 40" preserveAspectRatio="xMidYMid">
+    <path fill="#4D4D4D" d="M356,0H4C1.8,0,0,1.8,0,4v16v20h360V4C360,1.8,358.2,0,356,0z M22.991,27c-3.866,0-7-3.134-7-7s3.134-7,7-7
+      s7,3.134,7,7S26.857,27,22.991,27z M46.002,27c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S49.868,27,46.002,27z M69.013,27
+      c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S72.879,27,69.013,27z"/>
+  </symbol>
+
+  <symbol id="icon-vkontakte" viewBox="0 0 26 15" preserveAspectRatio="xMidYMid">
+    <path d="M16.138,11.51c0.956-0.309,2.18,2.04,3.483,2.939c0.978,0.681,1.727,0.534,1.727,0.534l3.473-0.05
+      c0,0,1.815-0.112,0.957-1.554c-0.071-0.12-0.503-1.069-2.585-3.022c-2.177-2.043-1.882-1.712,0.739-5.244
+      c1.597-2.153,2.236-3.468,2.036-4.028c-0.192-0.539-1.365-0.399-1.365-0.399L20.69,0.713c-0.381,0.001-0.704,0.119-0.851,0.515
+      c-0.003,0.004-0.621,1.666-1.445,3.079c-1.741,2.989-2.436,3.148-2.724,2.961c-0.661-0.433-0.494-1.737-0.494-2.664
+      c0-2.897,0.432-4.105-0.846-4.417c-0.427-0.104-0.739-0.172-1.828-0.182c-1.392-0.021-2.574,0-3.244,0.329
+      c-0.445,0.223-0.786,0.712-0.579,0.74c0.26,0.035,0.843,0.16,1.155,0.586c0.401,0.552,0.389,1.789,0.389,1.789
+      s0.229,3.411-0.54,3.834c-0.528,0.29-1.25-0.302-2.803-3.016C6.087,2.879,5.488,1.345,5.488,1.345S5.372,1.06,5.162,0.904
+      C4.912,0.719,4.562,0.66,4.562,0.66L0.848,0.684c0,0-0.558,0.016-0.763,0.262C-0.097,1.164,0.07,1.614,0.07,1.614
+      s2.909,6.881,6.203,10.347c3.02,3.182,6.452,2.971,6.452,2.971h1.555c0,0,0.469-0.054,0.709-0.312
+      c0.224-0.24,0.214-0.691,0.214-0.691S15.172,11.82,16.138,11.51z"/>
+  </symbol>
+
+  <symbol id="icon-facebook" viewBox="0 0 12 22" preserveAspectRatio="xMidYMid">
+    <path d="M12,4V0H8C5.791,0,4,1.791,4,4v4H0v4h4v10h4V12h4V8H8V4H12z"/>
+  </symbol>
+
+  <symbol id="icon-instagram" viewBox="0 0 21 21" preserveAspectRatio="xMidYMid">
+    <path d="M18,0H3C1.35,0,0,1.35,0,3v15c0,1.65,1.35,3,3,3h15c1.65,0,3-1.35,3-3V3C21,1.35,19.65,0,18,0z M10.5,7
+      c1.93,0,3.5,1.57,3.5,3.5S12.43,14,10.5,14S7,12.43,7,10.5S8.57,7,10.5,7z M18,18H3V9h1.181C4.067,9.482,4,9.983,4,10.5
+      c0,3.59,2.91,6.5,6.5,6.5s6.5-2.91,6.5-6.5c0-0.517-0.066-1.018-0.181-1.5H18V18z M18,7h-4V3h4V7z"/>
+  </symbol>
+</svg>
+<!-- End SVG-sprite -->
+
+<script src="./js/script.js"></script>
 </body>
 </html>
-
