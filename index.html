@@ -66,28 +66,40 @@
         <h2 class="visually-hidden">Наши преимущества</h2>
   
         <ul class="features__list">
-          <li class="features__item features__item--current">
-            <h3 class="features__title">Долго, дорого, скрупулезно.</h3>
-            <p class="features__text">Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
-            <a class="features__btn btn btn--wide" href="#">Узнать больше</a>
+          <li class="features__item feature feature--first feature--current">
+            <div class="feature__desc">
+              <h3 class="feature__title">Долго, дорого,<br> скрупулезно.</h3>
+              <p class="feature__text">Математически выверенный дизайн для вашего сайта или мобильного приложения.</p>
+              <a class="feature__btn btn" href="#">Узнать больше</a>
+            </div>
           </li>
   
-          <li class="features__item">
-            <h3 class="features__title">Любим математику как никто другой</h3>
-            <p class="features__text">Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
-            <a class="features__btn btn btn--wide" href="#">Узнать больше</a>
+          <li class="features__item feature feature--second">
+            <div class="feature__desc">
+              <h3 class="feature__title">Любим математику<br> как никто другой</h3>
+              <p class="feature__text">Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
+              <a class="feature__btn btn" href="#">Узнать больше</a>
+            </div>
           </li>
   
-          <li class="features__item">
-            <h3 class="features__title">Только ночь, только хардкор</h3>
-            <p class="features__text">Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
-            <a class="features__btn btn btn--wide" href="#">Узнать больше</a>
+          <li class="features__item feature feature--third">
+            <div class="feature__desc">
+              <h3 class="feature__title">Только ночь,<br> только хардкор</h3>
+              <p class="feature__text">Работать днем, как все? Мы против этого. Ближе к полуночи работа только начинается.</p>
+              <a class="feature__btn btn" href="#">Узнать больше</a>
+            </div>
           </li>
         </ul>
         <div class="features__toggle">
-          <button class="features__control features__control--current" type="button">Первый слайд</button>
-          <button class="features__control" type="button">Второй слайд</button>
-          <button class="features__control" type="button">Третий слайд</button>
+          <button class="features__control features__control--current" type="button">
+            <span class="visually-hidden">Первый слайд</span>
+          </button>
+          <button class="features__control" type="button">
+            <span class="visually-hidden">Второй слайд</span>
+          </button>
+          <button class="features__control" type="button">
+            <span class="visually-hidden">Третий слайд</span>
+          </button>
         </div>
       </div>
     </section>
@@ -98,23 +110,23 @@
         <h2 class="visually-hidden">Наши услуги</h2>
   
         <ul class="services__list">
-          <li class="services__item">
+          <li class="services__item services__item--websites">
             <h3 class="services__title">Веб-сайты</h3>
             <p class="services__text">Мир никогда не будет прежним после того как увидит ваш сайт!</p>
-            <a class="services__btn btn" href="#">Заказать</a>
+            <a class="services__btn btn btn--narrow" href="#">Заказать</a>
           </li>
   
-          <li class="services__item">
+          <li class="services__item services__item--applications">
             <h3 class="services__title">Приложения</h3>
             <p class="services__text">Покорите топ-10 приложений в AppStore и Google Play</p>
-            <a class="services__btn btn btn--green" href="#">Заказать</a>
+            <a class="services__btn btn btn--narrow btn--green" href="#">Заказать</a>
           </li>
   
-          <li class="services__item">
+          <li class="services__item services__item--presentations">
             <h3 class="services__title">Презентации</h3>
             <p class="services__text">Вы даже не подозреваете, 
                 насколько вы изумительны!</p>
-            <a class="services__btn btn btn--yellow" href="#">Заказать</a>
+            <a class="services__btn btn btn--narrow btn--yellow" href="#">Заказать</a>
           </li>
         </ul>
       </div>
@@ -125,34 +137,36 @@
         <div class="container">
           <h2 class="visually-hidden">О нас</h2>
   
-          <div class="about__col about__col--left">
-            <b class="about__lead">Мы — маленькая, но гордая дизайн-студия из Краснодара. </b>
-            <p class="about__text">Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
-            <div class="about__services services-about">
-              <b class="about__caption">Выполняем заказы на разработку:</b>
-              <ul class="services-about__list">
-                <li class="services-about__item">Веб-сайтов любой сложности</li>
-                <li class="services-about__item">Мобильных приложений для iOS и Android</li>
-                <li class="services-about__item">Слайдшоу и видео для корпоративных презентаций</li>
-              </ul>
+          <div class="about__row">
+            <div class="about__col about__col--left">
+              <b class="about__lead">Мы — маленькая, но гордая дизайн-студия из Краснодара. </b>
+              <p class="about__text">Исповедуем принципы минимализма и чистоты. Ставим математический расчет превыше креатива. Работаем не покладая рук, как роботы.</p>
+              <div class="about__services services-about">
+                <b class="about__caption">Выполняем заказы на разработку:</b>
+                <ul class="services-about__list">
+                  <li class="services-about__item">Веб-сайтов любой сложности</li>
+                  <li class="services-about__item">Мобильных приложений для iOS и Android</li>
+                  <li class="services-about__item">Слайдшоу и видео для корпоративных презентаций</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="about__col about__col--right">
-            <img class="about__img" src="./img/nerds-colorized.jpg" width="360" height="208" alt="Дизайн-студия Нёрдс">
-            <div class="about__stats stats-about">
-              <b class="about__caption">с 2004 года любим точность во всем:</b>
-              <table class="stats-about__table">
-                <tr class="stats-about__row">
-                  <td class="stats-about__col">146<sup>%</sup></td>
-                  <td class="stats-about__col">100<sup>%</sup></td>
-                  <td class="stats-about__col">50<sup>%</sup></td>
-                </tr>
-                <tr class="stats-about__row">
-                  <td class="stats-about__col">Уровень самоотдачи</td>
-                  <td class="stats-about__col">Соблюдение сроков</td>
-                  <td class="stats-about__col">Минимальная предоплата</td>
-                </tr>
-              </table>
+            <div class="about__col about__col--right">
+              <img class="about__img" src="./img/nerds-colorized.jpg" width="360" height="208" alt="Дизайн-студия Нёрдс">
+              <div class="about__stats stats-about">
+                <b class="about__caption">с 2004 года любим точность во всем:</b>
+                <table class="stats-about__table">
+                  <tr class="stats-about__row stats-about__row--top">
+                    <td class="stats-about__col">146<sup>%</sup></td>
+                    <td class="stats-about__col">100<sup>%</sup></td>
+                    <td class="stats-about__col">50<sup>%</sup></td>
+                  </tr>
+                  <tr class="stats-about__row stats-about__row--bottom">
+                    <td class="stats-about__col">Уровень самоотдачи</td>
+                    <td class="stats-about__col">Соблюдение сроков</td>
+                    <td class="stats-about__col">Минимальная предоплата</td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
         </div>
@@ -199,7 +213,7 @@
             ул. Б. Конюшенная, д. 19/8<br>
           </p>
           <a class="contacts__phone" href="tel:+78122757575">тел. +7 (812) 275-75-75</a><br>
-          <a class="btn btn-wide contacts__btn"  href="feedback.html">Напишите нам</a>
+          <a class="btn contacts__btn"  href="feedback.html">Напишите нам</a>
         </div>
       </div>
       <div class="contacts__map">
@@ -207,7 +221,7 @@
           <img class="contacts__img-map" src="./img/map.png" width="1440" height="416" alt="Адрес нашего офиса по улице Большая Конюшенная 19/8 в городе Санкт-Петербург">
         </div>
         <div class="contacts__online-map-wrapper">
-          <iframe class="contacts__online-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.0046391232827!2d27.452055316549444!3d53.878345480094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbda934dc537a5%3A0x44cd2c2130a805e9!2svulica+Janko%C5%ADskaha+34%2C+Minsk!5e0!3m2!1sen!2sby!4v1545729682928" width="1200" height="430" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <iframe class="contacts__online-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2352.0046391232827!2d27.452055316549444!3d53.878345480094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbda934dc537a5%3A0x44cd2c2130a805e9!2svulica+Janko%C5%ADskaha+34%2C+Minsk!5e0!3m2!1sen!2sby!4v1545729682928" width="1440" height="416" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
       </div>
     </section>
@@ -218,39 +232,41 @@
   <!-- Footer -->
   <footer class="page-footer">
     <div class="container">
-      <!-- Socials -->
-      <div class="socials">
-        <ul class="socials__list">
-          <li class="socials__item">
-            <a class="socials__link socials__link--vk" href="#" target="_blank">
-              <svg class="socials__icon icon" width="26" height="15">
-                <use xlink:href="#icon-vkontakte"/>
-              </svg>
-              <span class="visually-hidden">Вконтакте</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a class="socials__link socials__link--fb" href="#" target="_blank">
-              <svg class="socials__icon icon" width="12" height="22">
-                <use xlink:href="#icon-facebook"/>
-              </svg>
-              <span class="visually-hidden">Фейсбук</span>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a class="socials__link socials__link--in" href="#" target="_blank">
-              <svg class="socials__icon icon" width="21" height="21">
-                <use xlink:href="#icon-instagram"/>
-              </svg>
-              <span class="visually-hidden">Инстаграм</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- End Socials -->
-      <div class="appeal">
-        <b class="appeal__lead">Давайте дружить, это выгодно!</b>
-        <p class="appeal__promo">Скидка 10% для друзей из социальных сетей.</p>
+      <div class="page-footer__row">
+        <!-- Socials -->
+        <div class="socials">
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link socials__link--vk" href="#" target="_blank">
+                <svg class="socials__icon icon" width="26" height="15">
+                  <use xlink:href="#icon-vkontakte"/>
+                </svg>
+                <span class="visually-hidden">Вконтакте</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link socials__link--fb" href="#" target="_blank">
+                <svg class="socials__icon icon" width="12" height="22">
+                  <use xlink:href="#icon-facebook"/>
+                </svg>
+                <span class="visually-hidden">Фейсбук</span>
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link socials__link--in" href="#" target="_blank">
+                <svg class="socials__icon icon" width="21" height="21">
+                  <use xlink:href="#icon-instagram"/>
+                </svg>
+                <span class="visually-hidden">Инстаграм</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Socials -->
+        <div class="appeal">
+          <b class="appeal__lead">Давайте дружить, это выгодно!</b>
+          <p class="appeal__promo">Скидка 10% для друзей из социальных сетей.</p>
+        </div>
       </div>
     </div>
   </footer>
@@ -261,23 +277,27 @@
 <!-- Modal Write us -->
 <div class="modal-overlay">
   <div class="modal-write-us">
-    <button class="modal-write-us__close modal-close">Закрыть</button>
+    <button class="modal-write-us__close modal-close">
+      <span class="visually-hidden">Закрыть</span>
+    </button>
     <b class="modal-write-us__caption">Напишите нам</b>
     <form class="modal-write-us__form" id="form-write-us" action="#" method="post">
-      <div class="field">
-        <label class="field__label" for="user-name-write-us">Ваше имя:</label>
-        <input class="modal-write-us__input field__input" id="user-name-write-us" type="text" name="user-name-write-us" placeholder="Имя Фамилия">
-      </div>
-      <div class="field">
-        <label class="field__label" for="email-write-us">Ваш e-mail:</label>
-        <input class="modal-write-us__input field__input" id="email-write-us" type="email" name="email-write-us" placeholder="email@example.com">
+      <div class="form-write-us__row">
+        <div class="field form-write-us__col">
+          <label class="field__label" for="user-name-write-us">Ваше имя:</label>
+          <input class="modal-write-us__input field__input" id="user-name-write-us" type="text" name="user-name-write-us" placeholder="Имя Фамилия">
+        </div>
+        <div class="field form-write-us__col">
+          <label class="field__label" for="email-write-us">Ваш e-mail:</label>
+          <input class="modal-write-us__input field__input" id="email-write-us" type="email" name="email-write-us" placeholder="email@example.com">
+        </div>
       </div>
       <div class="field">
         <label class="field__label" for="message-write-us">Текст письма:</label>
         <textarea class="modal-write-us__text field__text" id="message-write-us" name="message-write-us" placeholder="В свободной форме"></textarea>
       </div>
       <div class="modal-write-us__btn-wrapper">
-        <button class="btn" type="submit">Отправить</button>
+        <button class="btn btn--ultra-wide modal-write-us__btn" type="submit">Отправить</button>
       </div>
     </form>
   </div>
