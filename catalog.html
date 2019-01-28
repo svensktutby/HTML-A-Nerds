@@ -173,30 +173,32 @@
         <!-- Sorting -->
         <div class="sorting">
           <b class="sorting__caption">Сортировать:</b>
-          <ul class="sorting__type type-sorting__list">
-            <li class="type-sorting__item type-sorting__item--current">
-              <a class="type-sorting__link" href="#">По цене</a>
-            </li>
-            <li class="type-sorting__item">
-              <a class="type-sorting__link" href="#">По типу</a>
-            </li>
-            <li class="type-sorting__item">
-              <a class="type-sorting__link" href="#">По названию</a>
-            </li>
-          </ul>
-
-          <ul class="sorting__order order-sorting__list">
-            <li class="order-sorting__item order-sorting__item--current">
-              <a class="order-sorting__link" href="#">
-                <span class="visually-hidden">По убыванию</span>
-              </a>
-            </li>
-            <li class="order-sorting__item">
-              <a class="order-sorting__link" href="#">
-                <span class="visually-hidden">По возрастанию</span>
-              </a>
-            </li>
-          </ul>
+          <div class="sorting__inner">
+            <ul class="sorting__type type-sorting">
+              <li class="type-sorting__item type-sorting__item--current">
+                <a class="type-sorting__link" href="#">По цене</a>
+              </li>
+              <li class="type-sorting__item">
+                <a class="type-sorting__link" href="#">По типу</a>
+              </li>
+              <li class="type-sorting__item">
+                <a class="type-sorting__link" href="#">По названию</a>
+              </li>
+            </ul>
+  
+            <ul class="sorting__order order-sorting">
+              <li class="order-sorting__item order-sorting__item--decrease order-sorting__item--current">
+                <a class="order-sorting__link" href="#">
+                  <span class="visually-hidden">По уменьшению</span>
+                </a>
+              </li>
+              <li class="order-sorting__item order-sorting__item--increase">
+                <a class="order-sorting__link" href="#">
+                  <span class="visually-hidden">По увеличению</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- End Sorting -->
         <!-- Products list -->

@@ -760,6 +760,119 @@ img {
 }
 /* Sorting
 ******************************/
+.sorting {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 57px 0 57px;
+}
+
+.sorting__caption {
+  display: block;
+  width: 360px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.sorting__inner {
+  width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.type-sorting,
+.order-sorting {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  font-size: 0;
+}
+
+.order-sorting {
+  position: relative;
+}
+
+.type-sorting__item {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.order-sorting__item {
+  position: absolute;
+}
+
+.order-sorting__item--decrease {
+  top: 4px;
+  right: 30px;
+}
+
+.order-sorting__item--increase {
+  top: 4px;
+    right: 2px;
+}
+
+.type-sorting__item:last-child,
+.order-sorting__item:last-child {
+  margin-right: 0;
+}
+
+.type-sorting__link {
+  font-size: 14px;
+  line-height: 1.285;
+  color: rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.type-sorting__link:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.type-sorting__item--current .type-sorting__link {
+  color: rgba(0, 0, 0, 1);
+}
+
+.order-sorting__link {
+  display: block;
+  width: 0;
+  height: 0;
+
+  border-style: solid;
+  transition: border-color 0.3s;
+}
+
+.order-sorting__item--decrease .order-sorting__link {
+  border-width: 10px 5px 0 5px;
+  border-color: rgba(0, 0, 0, 0.3) transparent transparent transparent;
+}
+
+.order-sorting__item--decrease .order-sorting__link:hover {
+  border-top-color: rgba(0, 0, 0, 0.6);
+}
+
+.order-sorting__item--current.order-sorting__item--decrease .order-sorting__link {
+  border-top-color: rgba(0, 0, 0, 1);
+}
+
+.order-sorting__item--increase .order-sorting__link {
+  border-width: 0 5px 10px 5px;
+  border-color: transparent transparent rgba(0, 0, 0, 0.3) transparent;
+}
+
+.order-sorting__item--increase .order-sorting__link:hover {
+  border-bottom-color: rgba(0, 0, 0, 0.6);
+}
+
+.order-sorting__item--current.order-sorting__item--increase .order-sorting__link {
+  border-bottom-color: rgba(0, 0, 0, 1);
+}
+
 /* Products list
 ******************************/
 .products__list {
@@ -768,7 +881,7 @@ img {
   justify-content: space-between;
   align-items: flex-start;
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 27px;
   padding: 0;
 
   list-style: none;
@@ -778,7 +891,7 @@ img {
   position: relative;
 
   width: 360px;
-  margin-bottom: 35px;
+  margin-bottom: 33px;
   overflow: hidden;
 }
 
@@ -787,7 +900,7 @@ img {
 }
 
 .product__icon {
-  transition: fill 0.3s;
+  transition: fill 0.5s;
 
   fill: rgba(77, 77, 77, 0.12);
 }
@@ -811,15 +924,12 @@ img {
   text-align: center;
 
   background-color: #eee;
-  opacity: 0;
 
-  transition: opacity 0.5s, bottom 0.5s;
+  transition: bottom 0.5s;
 }
 
 .product:hover .product__desc {
   bottom: 0;
-
-  opacity: 1;
 }
 
 .product__title {
