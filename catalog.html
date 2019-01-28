@@ -58,8 +58,10 @@
 
   <!-- Page content -->
   <main class="page-content">
-    <div class="container">
-      <h1 class="page-content__title">Магазин готовых шаблонов <span class="visually-hidden">Нёрдс</span></h1>
+    <div class="page-content__heading">
+      <div class="container">
+        <h1 class="page-content__title">Магазин готовых шаблонов <span class="visually-hidden">Нёрдс</span></h1>
+      </div>
     </div>
 
     <!-- Catalog -->
@@ -201,6 +203,9 @@
         <ul class="products__list">
           <li class="products__item product">
             <div class="product__img-wrapper">
+              <svg class="product__icon icon" width="360" height="40">
+                <use xlink:href="#icon-browser"/>
+              </svg>
               <img class="product__img" src="./img/template-sedona.jpg" width="360" height="576" alt="Скриншот шаблона Sedona">
             </div>
             <div class="product__desc">
@@ -209,13 +214,16 @@
               </h3>
               <p class="product__text">Информационный сайт для туристов</p>
               <div class="product__btn-wrapper">
-                <a class="btn btn-wide product__btn" href="#">9 900 руб.</a>
+                <a class="btn btn--wide product__btn" href="#">9 900 руб.</a>
               </div>
             </div>
           </li>
           
           <li class="products__item product">
             <div class="product__img-wrapper">
+              <svg class="product__icon icon" width="360" height="40">
+                <use xlink:href="#icon-browser"/>
+              </svg>
               <img class="product__img" src="./img/template-pink.jpg" width="360" height="576" alt="Скриншот шаблона Pink">
             </div>
             <div class="product__desc">
@@ -224,13 +232,16 @@
               </h3>
               <p class="product__text">Продуктовый лендинг приложения для iOS и Android</p>
               <div class="product__btn-wrapper">
-                <a class="btn btn-wide product__btn" href="#">9 900 руб.</a>
+                <a class="btn btn--wide product__btn" href="#">9 900 руб.</a>
               </div>
             </div>
           </li>
 
           <li class="products__item product">
             <div class="product__img-wrapper">
+              <svg class="product__icon icon" width="360" height="40">
+                <use xlink:href="#icon-browser"/>
+              </svg>
               <img class="product__img" src="./img/template-barbershop.jpg" width="360" height="576" alt="Скриншот шаблона Barbershop">
             </div>
             <div class="product__desc">
@@ -239,13 +250,16 @@
               </h3>
               <p class="product__text">Сайт салоны красоты.Для мужчин, да.</p>
               <div class="product__btn-wrapper">
-                <a class="btn btn-wide product__btn" href="#">9 900 руб.</a>
+                <a class="btn btn--wide product__btn" href="#">9 900 руб.</a>
               </div>
             </div>
           </li>
 
           <li class="products__item product">
             <div class="product__img-wrapper">
+              <svg class="product__icon icon" width="360" height="40">
+                <use xlink:href="#icon-browser"/>
+              </svg>
               <img class="product__img" src="./img/template-mishka.jpg" width="360" height="576" alt="Скриншот шаблона Mishka">
             </div>
             <div class="product__desc">
@@ -254,13 +268,16 @@
               </h3>
               <p class="product__text">Интернет-магазин вязаных игрушек</p>
               <div class="product__btn-wrapper">
-                <a class="btn btn-wide product__btn" href="#">9 900 руб.</a>
+                <a class="btn btn--wide product__btn" href="#">9 900 руб.</a>
               </div>
             </div>
           </li>
 
           <li class="products__item product">
             <div class="product__img-wrapper">
+              <svg class="product__icon icon" width="360" height="40">
+                <use xlink:href="#icon-browser"/>
+              </svg>
               <img class="product__img" src="./img/template-aplus.jpg" width="360" height="576" alt="Скриншот шаблона A Plus">
             </div>
             <div class="product__desc">
@@ -269,13 +286,16 @@
               </h3>
               <p class="product__text">Лендинг курсов повышения квалификации</p>
               <div class="product__btn-wrapper">
-                <a class="btn btn-wide product__btn" href="#">9 900 руб.</a>
+                <a class="btn btn--wide product__btn" href="#">9 900 руб.</a>
               </div>
             </div>
           </li>
 
           <li class="products__item product">
             <div class="product__img-wrapper">
+              <svg class="product__icon icon" width="360" height="40">
+                <use xlink:href="#icon-browser"/>
+              </svg>
               <img class="product__img" src="./img/template-kvast.jpg" width="360" height="576" alt="Скриншот шаблона Кваст">
             </div>
             <div class="product__desc">
@@ -284,7 +304,7 @@
               </h3>
               <p class="product__text">Промо-сайт производителя крафтового кваса</p>
               <div class="product__btn-wrapper">
-                <a class="btn btn-wide product__btn" href="#">9 900 руб.</a>
+                <a class="btn btn--wide product__btn" href="#">9 900 руб.</a>
               </div>
             </div>
           </li>
@@ -389,23 +409,27 @@
 <!-- Modal Write us -->
 <div class="modal-overlay">
   <div class="modal-write-us">
-    <button class="modal-write-us__close modal-close">Закрыть</button>
+    <button class="modal-write-us__close modal-close">
+      <span class="visually-hidden">Закрыть</span>
+    </button>
     <b class="modal-write-us__caption">Напишите нам</b>
     <form class="modal-write-us__form" id="form-write-us" action="#" method="post">
-      <div class="field">
-        <label class="field__label" for="user-name-write-us">Ваше имя:</label>
-        <input class="modal-write-us__input field__input" id="user-name-write-us" type="text" name="user-name-write-us" placeholder="Имя Фамилия">
-      </div>
-      <div class="field">
-        <label class="field__label" for="email-write-us">Ваш e-mail:</label>
-        <input class="modal-write-us__input field__input" id="email-write-us" type="email" name="email-write-us" placeholder="email@example.com">
+      <div class="form-write-us__row">
+        <div class="field form-write-us__col">
+          <label class="field__label" for="user-name-write-us">Ваше имя:</label>
+          <input class="modal-write-us__input field__input" id="user-name-write-us" type="text" name="user-name-write-us" placeholder="Имя Фамилия">
+        </div>
+        <div class="field form-write-us__col">
+          <label class="field__label" for="email-write-us">Ваш e-mail:</label>
+          <input class="modal-write-us__input field__input" id="email-write-us" type="email" name="email-write-us" placeholder="email@example.com">
+        </div>
       </div>
       <div class="field">
         <label class="field__label" for="message-write-us">Текст письма:</label>
         <textarea class="modal-write-us__text field__text" id="message-write-us" name="message-write-us" placeholder="В свободной форме"></textarea>
       </div>
       <div class="modal-write-us__btn-wrapper">
-        <button class="btn btn--ultra-wide" type="submit">Отправить</button>
+        <button class="btn btn--ultra-wide modal-write-us__btn" type="submit">Отправить</button>
       </div>
     </form>
   </div>
@@ -421,7 +445,7 @@
   </symbol>
 
   <symbol id="icon-browser" viewBox="0 0 360 40" preserveAspectRatio="xMidYMid">
-    <path fill="#4D4D4D" d="M356,0H4C1.8,0,0,1.8,0,4v16v20h360V4C360,1.8,358.2,0,356,0z M22.991,27c-3.866,0-7-3.134-7-7s3.134-7,7-7
+    <path d="M356,0H4C1.8,0,0,1.8,0,4v16v20h360V4C360,1.8,358.2,0,356,0z M22.991,27c-3.866,0-7-3.134-7-7s3.134-7,7-7
       s7,3.134,7,7S26.857,27,22.991,27z M46.002,27c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S49.868,27,46.002,27z M69.013,27
       c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S72.879,27,69.013,27z"/>
   </symbol>
