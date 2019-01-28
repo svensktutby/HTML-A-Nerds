@@ -25,7 +25,9 @@ img {
   height: auto;
 }
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden:not(:focus):not(:active),
+.grid-filter__input,
+.options-filter__input {
   position: absolute;
 
   width: 1px;
@@ -248,6 +250,19 @@ img {
 
 .logo__img {
   min-width: 160px;
+}
+
+.logo__link--active:hover .logo__img {
+  opacity: 0.8;
+}
+
+.logo__link--active:focus .logo__img,
+.logo__link--active:active .logo__img {
+  opacity: 0.3;
+}
+
+.logo__link--active:focus {
+  outline: none;
 }
 
 .main-nav__list {
@@ -751,6 +766,298 @@ img {
 ******************************/
 .filters {
   width: 260px;
+  padding-top: 53px;
+}
+
+.filters__item {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+
+  border: none;
+}
+
+.filters__caption {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.666;
+  text-transform: uppercase;
+}
+
+.price-filter {
+  min-width: 260px;
+}
+
+.price-filter__range-controls {
+  width: 100%;
+  margin: 50px 0 12px;
+  padding: 39px 0;
+
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.price-filter__range-scale {
+  position: relative;
+
+  width: 215px;
+  height: 2px;
+  margin: 0 auto;
+
+  background-color: #d7dcde;
+  cursor: pointer;
+}
+
+.price-filter__range-bar {
+  position: absolute;
+  right: 20%; /* через JS сделать одинаковую величину с .price-filter__toggle--max */
+  left: 0%; /* через JS сделать одинаковую величину с .price-filter__toggle--min */
+
+  height: 2px;
+
+  background-color: #00ca74;
+}
+
+.price-filter__toggle {
+  position: absolute;
+  top: -8px;
+
+  padding: 2px 2px; /* для того что бы кнопка стала квадратной, а не прямоугольной */
+
+  background-color: #ababab;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 2px rgba(0 ,0 ,0 , 0.1);
+  cursor: pointer;
+}
+
+.price-filter__toggle--min {
+  left: 0%; /* через JS сделать одинаковую величину с .price-filter__range-bar */
+}
+
+.price-filter__toggle--max {
+  right: 20%; /* через JS сделать одинаковую величину с .price-filter__range-bar */
+}
+
+.price-filter__toggle:hover,
+.price-filter__toggle:focus {
+  margin-top: -2px;
+
+  border-width: 10px;
+}
+
+.price-filter__toggle:focus {
+  outline: none;
+}
+
+.price-filter__toggle--min:hover,
+.price-filter__toggle--min:focus {
+  margin-left: -2px;
+}
+
+.price-filter__toggle--max:hover,
+.price-filter__toggle--max:focus {
+  margin-right: -2px;
+}
+
+.price-filter__range-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 260px;
+  margin-bottom: 38px;
+}
+
+.price-filter__label {
+  max-width: 50%;
+}
+
+.price-filter__input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 80px;
+  margin-left: 10px;
+  padding: 9px 5px;
+
+  text-align: center;
+
+  background-color: #eee;
+  border: none;
+  border-radius: 3px;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+.grid-filter,
+.options-filter {
+  padding-top: 15px;
+}
+
+.grid-filter {
+  margin-bottom: 45px;
+}
+
+.options-filter {
+  margin-bottom: 50px;
+}
+
+.grid-filter__list,
+.options-filter__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.grid-filter__item,
+.options-filter__item {
+  margin-bottom: 15px;
+  padding-left: 35px;
+}
+
+.grid-filter__item:last-child,
+.options-filter__item:last-child {
+  margin-bottom: 0;
+}
+
+.price-filter__text,
+.price-filter__input,
+.grid-filter__label,
+.options-filter__label {
+  font-size: 16px;
+  color: #283136;
+}
+
+.price-filter__text,
+.price-filter__input {
+  line-height: 1.375;
+}
+
+.price-filter__text {
+  text-transform: uppercase;
+}
+
+.grid-filter__indicator,
+.options-filter__indicator {
+  line-height: 1.25;
+}
+
+.grid-filter__label,
+.options-filter__label {
+  position: relative;
+
+  cursor: pointer;
+}
+
+.grid-filter__label::before,
+.options-filter__label::before {
+  content: "";
+  position: absolute;
+  left: -34px;
+
+  width: 25px;
+  height: 25px;
+
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.grid-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='rgba(77, 77, 77, 0.4)' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3C/svg%3E%0A");
+}
+
+.grid-filter__input:checked + .grid-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='rgba(77, 77, 77, 0.4)' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3Ccircle fill='rgba(77, 77, 77, 0.4)' cx='12.5' cy='12.5' r='4.5'/%3E%3C/svg%3E%0A");
+}
+
+.grid-filter__input:hover + .grid-filter__label::before,
+.grid-filter__input:focus + .grid-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='rgba(77, 77, 77, 1)' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3C/svg%3E%0A");
+}
+
+.grid-filter__input:hover:checked + .grid-filter__label::before,
+.grid-filter__input:focus:checked + .grid-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='rgba(77, 77, 77, 1)' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3Ccircle fill='rgba(77, 77, 77, 1)' cx='12.5' cy='12.5' r='4.5'/%3E%3C/svg%3E%0A");
+}
+
+.grid-filter__input:disabled + .grid-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='rgba(77, 77, 77, 0.1)' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3C/svg%3E%0A");
+}
+
+.grid-filter__input:disabled:checked + .grid-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='rgba(77, 77, 77, 0.1)' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3Ccircle fill='rgba(77, 77, 77, 0.1)' cx='12.5' cy='12.5' r='4.5'/%3E%3C/svg%3E%0A");
+}
+
+.grid-filter__input:disabled + .grid-filter__label {
+  color: rgba(40, 49, 54, 0.3);
+}
+
+.options-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23'%3E%3Cpath fill='rgba(77, 77, 77, 0.4)' d='M20 2c.542 0 1 .458 1 1v17c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h17m0-2H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z'/%3E%3C/svg%3E%0A");
+}
+
+.options-filter__input:checked + .options-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23' viewBox='0 0 27 23'%3E%3Cpath fill='rgba(77, 77, 77, 0.4)' d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102z'/%3E%3Cpath fill='rgba(77, 77, 77, 0.4)' d='M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E%0A");
+}
+
+.options-filter__input:hover + .options-filter__label::before,
+.options-filter__input:focus + .options-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23'%3E%3Cpath fill='rgba(77, 77, 77, 1)' d='M20 2c.542 0 1 .458 1 1v17c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h17m0-2H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z'/%3E%3C/svg%3E%0A");
+}
+
+.options-filter__input:hover:checked + .options-filter__label::before,
+.options-filter__input:focus:checked + .options-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23' viewBox='0 0 27 23'%3E%3Cpath fill='rgba(77, 77, 77, 1)' d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102z'/%3E%3Cpath fill='rgba(77, 77, 77, 1)' d='M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E%0A");
+}
+
+.options-filter__input:disabled + .options-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23'%3E%3Cpath fill='rgba(77, 77, 77, 0.1)' d='M20 2c.542 0 1 .458 1 1v17c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h17m0-2H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z'/%3E%3C/svg%3E%0A");
+}
+
+.options-filter__input:disabled:checked + .options-filter__label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23' viewBox='0 0 27 23'%3E%3Cpath fill='rgba(77, 77, 77, 0.1)' d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102z'/%3E%3Cpath fill='rgba(77, 77, 77, 0.1)' d='M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E%0A");
+}
+
+.options-filter__input:disabled + .options-filter__label {
+  color: rgba(40, 49, 54, 0.3);
+}
+
+.filters__btn {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 20px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.125;
+  color: #000;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: #eee;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+.filters__btn:hover,
+.filters__btn:focus {
+  background-color: #dfdfdf;
+}
+
+.filters__btn:focus {
+  outline: none;
+}
+
+.filters__btn:active {
+  padding-top: 12px;
+
+  color: rgba(0, 0, 0, 0.3);
+
+  background-color: #d5d5d5;
+  border-top: 3px solid #bfbfbf;
 }
 
 /* Products
@@ -758,6 +1065,7 @@ img {
 .products {
   width: 760px;
 }
+
 /* Sorting
 ******************************/
 .sorting {
@@ -778,10 +1086,10 @@ img {
 }
 
 .sorting__inner {
-  width: 360px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  width: 360px;
 }
 
 .type-sorting,
@@ -813,7 +1121,7 @@ img {
 
 .order-sorting__item--increase {
   top: 4px;
-    right: 2px;
+  right: 2px;
 }
 
 .type-sorting__item:last-child,
@@ -827,6 +1135,7 @@ img {
   color: rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
   text-decoration: none;
+
   transition: color 0.3s;
 }
 
@@ -844,6 +1153,7 @@ img {
   height: 0;
 
   border-style: solid;
+
   transition: border-color 0.3s;
 }
 
@@ -890,9 +1200,17 @@ img {
 .product {
   position: relative;
 
-  width: 360px;
-  margin-bottom: 33px;
+  width: 358px;
+  margin-bottom: 34px;
   overflow: hidden;
+
+  border: 1px solid rgba(77, 77, 77, 0.1);
+
+  transition: box-shadow 0.5s;
+}
+
+.product:hover {
+  box-shadow: 0 6px 15px 0 rgba(0, 1, 1, 0.25);
 }
 
 .product__img-wrapper {
@@ -989,7 +1307,6 @@ img {
   font-size: 16px;
   line-height: 1.125;
   color: #000;
-  text-transform: uppercase;
   text-decoration: none;
 
   background-color: #eee;

@@ -19,7 +19,7 @@
       <nav class="main-nav">
         <!-- Logo -->
         <div class="logo">
-          <a class="logo__link" href="index.html">
+          <a class="logo__link logo__link--active" href="index.html">
             <img class="logo__img" src="./img/logo.svg" width="160" height="65" alt="Логотип дизайн-студии Нёрдс">
           </a>
         </div>
@@ -84,11 +84,11 @@
               <div class="price-filter__range-inputs">
                 <label class="price-filter__label" for="price-min">
                   <span class="price-filter__text">От</span>
-                  <input class="price-filter__input" id="price-min" type="number" name="price-min" value="0">
+                  <input class="price-filter__input" id="price-min" type="text" name="price-min" value="0">
                 </label>
                 <label class="price-filter__label" for="price-max">
                   <span class="price-filter__text">До</span>
-                  <input class="price-filter__input" id="price-max" type="number" name="price-max" value="15000">
+                  <input class="price-filter__input" id="price-max" type="text" name="price-max" value="15000">
                 </label>
               </div>
             </div>
@@ -99,13 +99,13 @@
             <div class="filters__field">
               <ul class="grid-filter__list">
                 <li class="grid-filter__item">
-                  <input class="grid-filter__input" id="grid-adaptive" type="radio" name="grid" value="adaptive">
+                  <input class="grid-filter__input" id="grid-adaptive" type="radio" name="grid" value="adaptive" checked>
                   <label class="grid-filter__label" for="grid-adaptive">
                     <span class="grid-filter__indicator">Адаптивная</span>
                   </label>
                 </li>
                 <li class="grid-filter__item">
-                  <input class="grid-filter__input" id="grid-fixed" type="radio" name="grid" value="fixed">
+                  <input class="grid-filter__input" id="grid-fixed" type="radio" name="grid" value="fixed" disabled>
                   <label class="grid-filter__label" for="grid-fixed">
                     <span class="grid-filter__indicator">Фиксированная</span>
                   </label>
@@ -149,7 +149,7 @@
                   </label>
                 </li>
                 <li class="options-filter__item">
-                  <input class="options-filter__input" id="options-cart" type="checkbox" name="options" value="cart">
+                  <input class="options-filter__input" id="options-cart" type="checkbox" name="options" value="cart" disabled>
                   <label class="options-filter__label" for="options-cart">
                     <span class="options-filter__indicator">Корзина</span>
                   </label>
@@ -176,7 +176,7 @@
           <div class="sorting__inner">
             <ul class="sorting__type type-sorting">
               <li class="type-sorting__item type-sorting__item--current">
-                <a class="type-sorting__link" href="#">По цене</a>
+                <a class="type-sorting__link">По цене</a>
               </li>
               <li class="type-sorting__item">
                 <a class="type-sorting__link" href="#">По типу</a>
@@ -188,7 +188,7 @@
   
             <ul class="sorting__order order-sorting">
               <li class="order-sorting__item order-sorting__item--decrease order-sorting__item--current">
-                <a class="order-sorting__link" href="#">
+                <a class="order-sorting__link">
                   <span class="visually-hidden">По уменьшению</span>
                 </a>
               </li>
@@ -440,16 +440,16 @@
 
 <!-- SVG-sprite -->
 <svg style="display: none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <symbol id="icon-cart" viewBox="0 0 15 15" preserveAspectRatio="xMidYMid">
-    <circle cx="4.5" cy="13.5" r="1.5"/>
-    <circle cx="12.5" cy="13.5" r="1.5"/>
-    <polygon points="15,2 4.07,2 3.648,0 0,0 0,2 2.031,2 4.016,11 15,11 15,9 9.441,9 15,6.951 	"/>
-  </symbol>
-
   <symbol id="icon-browser" viewBox="0 0 360 40" preserveAspectRatio="xMidYMid">
     <path d="M356,0H4C1.8,0,0,1.8,0,4v16v20h360V4C360,1.8,358.2,0,356,0z M22.991,27c-3.866,0-7-3.134-7-7s3.134-7,7-7
       s7,3.134,7,7S26.857,27,22.991,27z M46.002,27c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S49.868,27,46.002,27z M69.013,27
       c-3.866,0-7-3.134-7-7s3.134-7,7-7s7,3.134,7,7S72.879,27,69.013,27z"/>
+  </symbol>
+
+  <symbol id="icon-cart" viewBox="0 0 15 15" preserveAspectRatio="xMidYMid">
+    <circle cx="4.5" cy="13.5" r="1.5"/>
+    <circle cx="12.5" cy="13.5" r="1.5"/>
+    <polygon points="15,2 4.07,2 3.648,0 0,0 0,2 2.031,2 4.016,11 15,11 15,9 9.441,9 15,6.951 	"/>
   </symbol>
 
   <symbol id="icon-vkontakte" viewBox="0 0 26 15" preserveAspectRatio="xMidYMid">
