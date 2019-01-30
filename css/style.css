@@ -722,9 +722,9 @@ img {
 
 .contacts__btn {
   display: block;
+  max-width: 130px;
   padding-right: 45px;
   padding-left: 45px;
-  max-width: 130px;
 }
 
 .contacts__img-map-wrapper {
@@ -788,12 +788,13 @@ img {
 }
 
 .filters__caption {
+  display: inline-block;
+  max-width: 260px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 1.666;
   text-transform: uppercase;
-  display: inline-block;
-  max-width: 260px;
 }
 
 .price-filter {
@@ -823,7 +824,7 @@ img {
 .price-filter__range-bar {
   position: absolute;
   right: 20%; /* через JS сделать одинаковую величину с .price-filter__toggle--max */
-  left: 0%; /* через JS сделать одинаковую величину с .price-filter__toggle--min */
+  left: 0; /* через JS сделать одинаковую величину с .price-filter__toggle--min */
 
   height: 2px;
 
@@ -844,7 +845,7 @@ img {
 }
 
 .price-filter__toggle--min {
-  left: 0%; /* через JS сделать одинаковую величину с .price-filter__range-bar */
+  left: 0; /* через JS сделать одинаковую величину с .price-filter__range-bar */
 }
 
 .price-filter__toggle--max {
@@ -896,8 +897,9 @@ img {
   background-color: #eee;
   border: none;
   border-radius: 3px;
+
   -webkit-appearance: textfield;
-  appearance: textfield;
+          appearance: textfield;
 }
 
 .grid-filter,
@@ -952,13 +954,15 @@ img {
 .grid-filter__indicator,
 .options-filter__indicator {
   display: inline-block;
-  line-height: 1.25;
   max-width: 260px;
+
+  line-height: 1.25;
 }
 
 .grid-filter__label,
 .options-filter__label {
   position: relative;
+
   cursor: pointer;
 }
 
@@ -1221,12 +1225,14 @@ img {
   position: relative;
 
   width: 358px;
-  margin-bottom: 34px;
+  margin-bottom: 35px;
   overflow: hidden;
 
-  border-bottom: 1px solid rgba(77, 77, 77, 0.1);
   border-right: 1px solid rgba(77, 77, 77, 0.1);
+  border-bottom: 1px solid rgba(77, 77, 77, 0.1);
   border-left: 1px solid rgba(77, 77, 77, 0.1);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 
   transition: box-shadow 0.5s;
 }
@@ -1235,18 +1241,27 @@ img {
   box-shadow: 0 6px 15px 0 rgba(0, 1, 1, 0.25);
 }
 
+.product::before {
+  content: "";
+
+  display: block;
+  width: 360px;
+  height: 40px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='40' viewBox='0 0 360 40'%3E%3Cpath fill='rgba(77, 77, 77, 1)' d='M356 0H4C1.8 0 0 1.8 0 4v36h360V4c0-2.2-1.8-4-4-4zM22.991 27a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm23.011 0a7 7 0 1 1 0-14 7 7 0 0 1 0 14z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.12;
+
+  transition: opacity 0.5s;
+}
+
+.product:hover::before {
+  opacity: 1;
+}
+
 .product__img-wrapper {
   font-size: 0;
-}
-
-.product__icon {
-  transition: fill 0.5s;
-
-  fill: rgba(77, 77, 77, 0.12);
-}
-
-.product:hover .product__icon {
-  fill: rgba(77, 77, 77, 1);
 }
 
 .product__img {
