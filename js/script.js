@@ -12,7 +12,7 @@
   var slides = $$('.feature');
   var btnSlides = $$('.features__control');
   var slideIndex = 0;
-  
+
   toggleSlides(slideIndex);
 
   if (btnSlides) {
@@ -62,7 +62,6 @@
     }
   }
 
-
   /* Modal Write us
    ******************************/
   var openWriteUs = $('.contacts__btn');
@@ -75,18 +74,21 @@
     var userNameWriteUs = formWriteUs.querySelector('#user-name-write-us');
     var emailWriteUs = formWriteUs.querySelector('#email-write-us');
     var messageWriteUs = formWriteUs.querySelector('#message-write-us');
-    var storageName = localStorage.getItem('userNameWriteUs');
-    var storageEmail = localStorage.getItem('emailWriteUs');
+    var isStorageSupport = true;
+    var storageName = '';
+    var storageEmail = '';
+
+    try {
+      storageName = localStorage.getItem('userNameWriteUs');
+      storageEmail = localStorage.getItem('emailWriteUs');
+    } catch (error) {
+      isStorageSupport = false;
+    }
 
     openWriteUs.addEventListener('click', function (event) {
       event.preventDefault();
 
       openWriteUsWindow();
-    });
-
-    formWriteUs.addEventListener('submit', function () {
-      fillFieldsForm();
-      errorFillForm();
     });
 
     closeWriteUs.addEventListener('click', function (event) {
@@ -108,6 +110,23 @@
         closeWriteUsWindow();
       }
     });
+
+    if (formWriteUs) {
+      formWriteUs.addEventListener('submit', function (event) {
+        if (userNameWriteUs.value && emailWriteUs.value && messageWriteUs.value) {
+          if (isStorageSupport) {
+            localStorage.setItem('userNameWriteUs', userNameWriteUs.value);
+            localStorage.setItem('emailWriteUs', emailWriteUs.value);
+          }
+        } else {
+          event.preventDefault();
+
+          modalWriteUs.classList.remove('modal--error');
+          modalWriteUs.offsetWidth = modalWriteUs.offsetWidth;
+          modalWriteUs.classList.add('modal--error');
+        }
+      });
+    }
   }
 
   function openWriteUsWindow() {
@@ -127,36 +146,18 @@
     }
   }
 
-  function fillFieldsForm() {
-    if (userNameWriteUs.value || emailWriteUs.value || messageWriteUs.value) {
-      localStorage.setItem('userNameWriteUs', userNameWriteUs.value);
-      localStorage.setItem('emailWriteUs', emailWriteUs.value);
-    }
-  }
-
-  function errorFillForm() {
-    if (!userNameWriteUs.value || !emailWriteUs.value || !messageWriteUs.value) {
-      event.preventDefault();
-
-      modalWriteUs.classList.remove('modal-write-us--error');
-      modalWriteUs.offsetWidth = modalWriteUs.offsetWidth;
-      modalWriteUs.classList.add('modal-write-us--error');
-    }
-    console.log(userNameWriteUs.value, emailWriteUs.value, messageWriteUs.value);
-  }
-
   function closeWriteUsWindow() {
     if (modalOverlay.classList.contains('modal-overlay--shown')) {
       modalOverlay.classList.remove('modal-overlay--shown');
       modalOverlay.classList.add('modal-overlay--hidden');
 
-      if (modalWriteUs.classList.contains('modal-write-us--error')) {
-        modalWriteUs.classList.remove('modal-write-us--error');
+      if (modalWriteUs.classList.contains('modal--error')) {
+        modalWriteUs.classList.remove('modal--error');
       }
 
-      setTimeout(function () {
+      window.setTimeout(function () {
         modalOverlay.classList.remove('modal-overlay--hidden');
-      }, 450);
+      }, 1150);
     }
   }
 })();
