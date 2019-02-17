@@ -1,4 +1,4 @@
-(function () {
+window.addEventListener('DOMContentLoaded', function() {
   function $(el) {
     return document.querySelector(el);
   }
@@ -9,64 +9,44 @@
 
   /* Slider
    ******************************/
-  var slides = $$('.feature');
-  var btnSlides = $$('.features__control');
-  var slideIndex = 0;
+  var slidesBlock = $('.features'),
+      slides = $$('.features__item'),
+      slidesBtn = $$('.features__control');
 
-  toggleSlides(slideIndex);
-
-  if (btnSlides) {
-    for (var i = 0; i < btnSlides.length; i++) {
-      currentBtn(i);
+  function hideSlide (a) {
+    for (var i = a; i < slides.length; i++) {
+      slides[i].classList.remove('feature--current');
+      slidesBtn[i].classList.remove('features__control--current');
     }
   }
 
-  function currentBtn(n) {
-    btnSlides[n].addEventListener('click', function (event) {
-      event.preventDefault();
+  hideSlide(1);
 
-      currentSlide(n);
+  function showSlide(b) {
+    if (!slides[b].classList.contains('feature--current')) {
+      hideSlide(0);
+      slides[b].classList.add('feature--current');
+      slidesBtn[b].classList.add('features__control--current');
+    }
+  }
+
+  if (slidesBlock) {
+    slidesBlock.addEventListener('click', function(event) {
+      var target = event.target;
+      for (var i = 0; i < slidesBtn.length; i++) {
+        if (target.matches('.features__control') && target == slidesBtn[i]) {
+          showSlide(i);
+          break;
+        }
+      }
     });
-  }
-
-  function currentSlide(n) {
-    toggleSlides(slideIndex = n);
-  }
-
-  function toggleSlides(n) {
-    if (n > slides.length - 1) {
-      slideIndex = 0;
-    }
-    if (n < 0) {
-      slideIndex = slides.length - 1;
-    }
-    for (var j = 0; j < slides.length; j++) {
-      var slide = slides[j];
-
-      if (slide.classList.contains('feature--current')) {
-        slide.classList.remove('feature--current');
-      }
-    }
-    for (var i = 0; i < btnSlides.length; i++) {
-      var btn = btnSlides[i];
-
-      if (btn.classList.contains('features__control--current')) {
-        btn.classList.remove('features__control--current');
-      }
-    }
-    if (slides[slideIndex]) {
-      slides[slideIndex].classList.add('feature--current');
-    }
-    if (btnSlides[slideIndex]) {
-      btnSlides[slideIndex].classList.add('features__control--current');
-    }
   }
 
   /* Modal Write us
    ******************************/
-  var openWriteUs = $('.contacts__btn');
-  var modalOverlay = $('.modal-overlay');
-  var modalWriteUs = $('.modal-write-us');
+  var openWriteUs = $('.contacts__btn'),
+      modalOverlay = $('.modal-overlay'),
+      modalWriteUs = $('.modal-write-us');
 
   if (modalWriteUs) {
     var formWriteUs = modalWriteUs.querySelector('.modal-write-us__form');
@@ -91,18 +71,12 @@
       openWriteUsWindow();
     });
 
-    closeWriteUs.addEventListener('click', function (event) {
-      event.preventDefault();
-
-      closeWriteUsWindow();
-    });
-
-    modalOverlay.addEventListener('click', function () {
-      closeWriteUsWindow();
-    });
-
-    modalWriteUs.addEventListener('click', function (event) {
-      event.stopPropagation();
+    modalOverlay.addEventListener('click', function (event) {
+      if (event.target === modalOverlay || event.target === closeWriteUs) {
+        closeWriteUsWindow();
+      } else {
+        event.stopPropagation();
+      }
     });
 
     window.addEventListener('keydown', function (event) {
@@ -130,8 +104,15 @@
   }
 
   function openWriteUsWindow() {
-    if (!modalOverlay.classList.contains('modal-overlay--shown')) {
+    if (modalOverlay.classList.contains('visually-hidden')) {
+      modalOverlay.classList.remove('visually-hidden');
+
+      if (modalOverlay.classList.contains('modal-overlay--hidden')) {
+        modalOverlay.classList.remove('modal-overlay--hidden');
+      }
+      
       modalOverlay.classList.add('modal-overlay--shown');
+      document.body.style.overflow = 'hidden';
 
       if (storageName && !storageEmail) {
         userNameWriteUs.value = storageName;
@@ -147,17 +128,18 @@
   }
 
   function closeWriteUsWindow() {
-    if (modalOverlay.classList.contains('modal-overlay--shown')) {
+    if (!modalOverlay.classList.contains('visually-hidden')) {
       modalOverlay.classList.remove('modal-overlay--shown');
       modalOverlay.classList.add('modal-overlay--hidden');
+      document.body.style.overflow = '';
 
       if (modalWriteUs.classList.contains('modal--error')) {
         modalWriteUs.classList.remove('modal--error');
       }
 
       window.setTimeout(function () {
-        modalOverlay.classList.remove('modal-overlay--hidden');
-      }, 1150);
+        modalOverlay.classList.add('visually-hidden');
+      }, 1190);
     }
   }
-})();
+});
